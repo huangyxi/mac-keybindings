@@ -1,0 +1,76 @@
+/* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+
+{
+	/* Windows bindings */
+
+	"\UF72B" = "moveToEndOfParagraph:";  /* End */
+	"\UF729" = "moveToBeginningOfParagraph:";  /* Home */
+	"$\UF729" = "moveToBeginningOfLineAndModifySelection:";  /* Shift-Home */
+	"$\UF72B" = "moveToEndOfLineAndModifySelection:";  /* Shift-End */
+	"^\UF729" = "moveToBeginningOfDocument:";  /* Ctrl-Home */
+	"^\UF72B" = "moveToEndOfDocument:";  /* Ctrl-End */
+	"$^\UF729" = "moveToBeginningOfDocumentAndModifySelection:";  /* Shift-Ctrl-Home */
+	"$^\UF72B" = "moveToEndOfDocumentAndModifySelection:";  /* Shift-Ctrl-End */
+
+	"\UF72C" = "pageUp:";  /* PageUp */
+	"\UF72D" = "pageDown:";  /* PageDown */
+	"$\UF728" = "cut:";  /* Shift-Del */
+	"@\UF727" = "copy:";  /* Cmd-Ins */
+	"$\UF727" = "paste:";  /* Shift-Ins */
+	"@\UF746" = "copy:";  /* Cmd-Help (Ins) */
+	"$\UF746" = "paste:";  /* Shift-Help (Ins) */
+
+
+	/* Vim style bindings */
+
+	"^r" = "redo:";
+	"^c" = {
+		"u" = "undo:";
+		"o" =("moveToEndOfLine:", "insertParagraphSeparator:",);
+		"O" =("moveToBeginningOfLine:", "insertParagraphSeparator:", "moveBackward:",);
+		"I" = "moveToBeginningOfLine:";
+		"A" = "moveToEndOfLine:";
+		"i" = "moveBackward:";
+		"a" = "moveForward:";
+		"e" = "moveWordForward:";
+		"b" = "moveWordBackward:";
+		"w" = ("moveWordForward:", "moveWordForward:", "moveWordBackward:",);
+		"g" = {
+			"e" = ("moveWordBackward:", "moveWordBackward:", "moveWordForward:",);
+			"g" = "moveToBeginningOfDocument:";
+		};
+		"G" = "moveToEndOfDocument:";
+		"d" = {
+			"e" = "deleteWordForward:";
+			"b" = "deleteWordBackward:";
+			"w" = ("moveWordForwardAndModifySelection:", "moveWordForwardAndModifySelection:", "moveWordBackwardAndModifySelection:", "yank:",);
+			"d" = ("moveToBeginningOfLine:", "deleteToEndOfLine:", "deleteForward:",);
+			"g" = {
+				"g" = ("moveToBeginningOfDocumentAndModifySelection:", "yank:",);
+				"e" = ("moveWordBackwardAndModifySelection:", "moveWordBackwardAndModifySelection:", "moveWordForwardAndModifySelection:", "yank:",);
+			};
+			"G" = ("moveToEndOfDocumentAndModifySelection:", "yank:",);
+		};
+	};
+
+
+	/* Additional Emacs bindings */
+
+	"~f" = "moveWordForward:";
+	"~b" = "moveWordBackward:";
+	"~<" = "moveToBeginningOfDocument:";
+	"~>" = "moveToEndOfDocument:";
+	"~v" = "pageUp:";
+
+	"~d" = "deleteWordForward:";
+	"~^h" = "deleteWordBackward:";
+	"^u" = "deleteToBeginningOfLine:";
+	"^k" = "deleteToEndOfLine:";
+	"^w" = "deleteWordBackward:";
+	"^$_" = "undo:";
+
+	/* "^ " = "setMark:"; [> Ctrl-Spc <] */
+	/* "^w" = "deleteToMark:"; */
+	/* "~\010" = "deleteWordBackward:";  [> Option-Backspace <] */
+	/* "~\177" = "deleteWordBackward:";  [> Option-Delete <] */
+}
