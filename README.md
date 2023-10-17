@@ -1,0 +1,2 @@
+- `DefaultKeyBinding.dict`: `~/Library/KeyBindings/DefaultKeyBinding.dict`
+- `karabiner/`: `~/.config/karabiner/assets/complex_modifications/*.json`
