@@ -26,8 +26,8 @@
 	"^r" = "redo:";
 	"^c" = {
 		"u" = "undo:";
-		"o" =("moveToEndOfLine:", "insertParagraphSeparator:",);
-		"O" =("moveToBeginningOfLine:", "insertParagraphSeparator:", "moveBackward:",);
+		"o" =("moveToEndOfLine:", "insertNewline:",);
+		"O" =("moveToBeginningOfLine:", "insertNewline:", "moveBackward:",);
 		"I" = "moveToBeginningOfLine:";
 		"A" = "moveToEndOfLine:";
 		"i" = "moveBackward:";
@@ -41,6 +41,14 @@
 		};
 		"G" = "moveToEndOfDocument:";
 		"d" = {
+			"a" = {
+				"w" = ("moveWordForward:", "moveWordForwardAndModifySelection:", "moveWordForwardAndModifySelection:", "moveWordBackwardAndModifySelection:", "yank:",);
+				"e" = ("moveWordBackward:", "moveWordBackward:", "moveWordForward:", "deleteToEndOfLine:",);
+			};
+			"h" = "deleteBackward:";
+			"l" = "deleteForward:";
+			"j" = ("moveToBeginningOfLine:", "moveParagraphForwardAndModifySelection:", "moveParagraphForwardAndModifySelection:", "yank:");
+			"k" = ("moveToEndOfLine:", "moveParagraphBackwardAndModifySelection:", "moveParagraphBackwardAndModifySelection:", "yank:");
 			"e" = "deleteWordForward:";
 			"b" = "deleteWordBackward:";
 			"w" = ("moveWordForwardAndModifySelection:", "moveWordForwardAndModifySelection:", "moveWordBackwardAndModifySelection:", "yank:",);
