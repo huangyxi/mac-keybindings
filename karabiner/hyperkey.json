@@ -1,0 +1,117 @@
+{
+	"title": "Caps Lock (⇪) → Hyper Key (✦)",
+	"rules": [
+		{
+			"description": "Caps Lock (⇪) → Hyper Key (⌃⌥⌘) (Caps Lock if alone)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": {
+							"mandatory": [
+								"left_shift"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_gui",
+							"modifiers": [
+								"left_shift",
+								"left_control",
+								"left_option"
+							]
+						}
+					],
+					"type": "basic"
+				},
+				{
+					"from": {
+						"key_code": "caps_lock"
+					},
+					"to": [
+						{
+							"key_code": "left_gui",
+							"modifiers": [
+								"left_control",
+								"left_option"
+							]
+						}
+					],
+					"to_if_alone": [
+						{
+							"key_code": "caps_lock"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "Caps Lock (⇪) → Hyper Key (⌃⌥⌘⇧) (Caps Lock if alone)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock"
+					},
+					"to": [
+						{
+							"key_code": "left_gui",
+							"modifiers": [
+								"left_control",
+								"left_option",
+								"left_shift"
+							]
+						}
+					],
+					"to_if_alone": [
+						{
+							"key_code": "caps_lock"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "Caps Lock (⇪) + number → Input Language (1: en, 2: zh-Hans)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "1",
+						"modifiers": {
+							"mandatory": [
+								"caps_lock"
+							]
+						}
+					},
+					"to": [
+						{
+							"select_input_source": {
+								"language": "en"
+							}
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "1",
+						"modifiers": {
+							"mandatory": [
+								"caps_lock"
+							]
+						}
+					},
+					"to": [
+						{
+							"select_input_source": {
+								"language": "zh-Hans"
+							}
+						}
+					]
+				}
+
+			]
+		}
+	]
+}
