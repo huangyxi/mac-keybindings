@@ -1,5 +1,5 @@
 {
-	"title": "Caps Lock (⇪) → Hyper Key (✦)",
+	"title": "Hyper Key (✦), Meh Key (⌃⌥⇧)",
 	"rules": [
 		{
 			"description": "Caps Lock (⇪) → Hyper Key (⌃⌥⌘) (Caps Lock if alone)",
@@ -15,12 +15,19 @@
 					},
 					"to": [
 						{
-							"key_code": "left_gui",
+							"key_code": "left_command",
 							"modifiers": [
 								"left_shift",
 								"left_control",
 								"left_option"
 							]
+						}
+					],
+					"to_if_alone": [
+						{
+							"select_input_source": {
+								"language": "zh-Hans"
+							}
 						}
 					],
 					"type": "basic"
@@ -31,7 +38,7 @@
 					},
 					"to": [
 						{
-							"key_code": "left_gui",
+							"key_code": "left_command",
 							"modifiers": [
 								"left_control",
 								"left_option"
@@ -56,7 +63,7 @@
 					},
 					"to": [
 						{
-							"key_code": "left_gui",
+							"key_code": "left_command",
 							"modifiers": [
 								"left_control",
 								"left_option",
@@ -67,6 +74,88 @@
 					"to_if_alone": [
 						{
 							"key_code": "caps_lock"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "Command (⌘) + Caps Lock (⇪) → Meh Key (⌃⌥⇧)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": {
+							"mandatory": [
+								"left_command"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_shift",
+							"modifiers": [
+								"left_control",
+								"left_option"
+							]
+						}
+					],
+					"to_if_alone": [
+						{
+							"select_input_source": {
+								"language": "en"
+							}
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "Control (⌃) + Caps Lock (⇪) → Combo(⌥⌘⇧)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": {
+							"mandatory": [
+								"left_control"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_shift",
+							"modifiers": [
+								"left_option",
+								"left_command"
+							]
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "Option (⌥) + Caps Lock (⇪) → Combo(⌃⌘⇧)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": {
+							"mandatory": [
+								"left_option"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_shift",
+							"modifiers": [
+								"left_control",
+								"left_command"
+							]
 						}
 					],
 					"type": "basic"
@@ -95,7 +184,7 @@
 				},
 				{
 					"from": {
-						"key_code": "1",
+						"key_code": "2",
 						"modifiers": {
 							"mandatory": [
 								"caps_lock"
@@ -111,6 +200,51 @@
 					]
 				}
 
+			]
+		},
+		{
+			"description": "Caps Lock (⇪) + key → Input Language (esc: en, `: zh-Hans)",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "escape",
+						"modifiers": {
+							"mandatory": [
+								"caps_lock"
+							]
+						}
+					},
+					"to": [
+						{
+							"select_input_source": {
+								"language": "en"
+							}
+						}
+					]
+				}
+
+			]
+		},
+		{
+			"description": "Caps Lock (⇪) + Caps Lock (⇪) -> zh-Hans IME",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "caps_lock"
+					},
+					"parameters": {
+						"basic.to_if_held_down_threshold_milliseconds": 300
+					},
+					"to_if_held_down": [
+						{
+							"select_input_source": {
+								"language": "zh-Hans"
+							},
+							"repeat": "false"
+						}
+					],
+					"type": "basic"
+				}
 			]
 		}
 	]
