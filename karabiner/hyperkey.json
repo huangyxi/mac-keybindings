@@ -133,6 +133,14 @@
 							]
 						}
 					],
+					"to_if_alone": [
+						{
+							"key_code": "caps_lock",
+							"modifiers": [
+								"left_control"
+							]
+						}
+					],
 					"type": "basic"
 				}
 			]
@@ -155,6 +163,14 @@
 							"modifiers": [
 								"left_control",
 								"left_command"
+							]
+						}
+					],
+					"to_if_alone": [
+						{
+							"key_code": "caps_lock",
+							"modifiers": [
+								"left_option"
 							]
 						}
 					],
